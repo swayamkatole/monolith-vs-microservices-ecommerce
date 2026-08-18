@@ -2,11 +2,16 @@
 
 This repository contains the source code and k6 load-testing scripts for an empirical comparison of monolithic and microservices architectures for an e-commerce application.
 
+📄 **Research paper:** [An Empirical Comparison of Monolithic and Microservices Architectures for an E-Commerce Application](https://arxiv.org/abs/2608.15668)  
+📌 **arXiv:** [arXiv:2608.15668 [cs.SE]](https://arxiv.org/abs/2608.15668)
+
 ## Research paper
 
 **Title:** An Empirical Comparison of Monolithic and Microservices Architectures for an E-Commerce Application
 
 **Author:** Swayam Amol Katole
+
+**Status:** Publicly available as an arXiv preprint.
 
 This study evaluates equivalent monolithic and microservices implementations under HTTP load at 50 and 100 virtual users (VUs). The measurements include throughput, average latency, p95 latency, and error rate.
 
@@ -56,7 +61,7 @@ All implementations are designed to use PostgreSQL.
 
 ### Prerequisites
 
-Install the following:
+Install:
 
 - Java 21
 - Maven
@@ -65,9 +70,9 @@ Install the following:
 
 ### Configure the database
 
-Create a PostgreSQL database and configure each service with local credentials.
+Create a PostgreSQL database and configure each application or service with local credentials.
 
-Do not commit passwords, API keys, or local configuration files to GitHub. Use an `application.properties` file locally or environment variables.
+Do not commit passwords, API keys, `.env` files, or local configuration files to GitHub. Use a local `application.properties` file or environment variables.
 
 ### Run the monolith
 
@@ -116,13 +121,13 @@ Run a microservices test:
 k6 run microservices-load.js
 ```
 
-The test scenarios exercise product catalog retrieval, product-detail retrieval, order creation, cart updates, and cart retrieval.
+The test scenarios exercise product-catalog retrieval, product-detail retrieval, order creation, cart updates, and cart retrieval.
 
 ## Results summary
 
-At 50 VUs, both systems completed the benchmark without errors.
+At 50 VUs, both architectures completed the benchmark without errors.
 
-At 100 VUs, the microservices implementation showed:
+At 100 VUs, the microservices implementation achieved:
 
 - 5.4% higher throughput
 - 25% lower average latency
@@ -146,10 +151,10 @@ To reproduce or extend the study:
 If you use this repository, please cite:
 
 ```text
-Swayam Amol Katole. An Empirical Comparison of Monolithic and Microservices Architectures for an E-Commerce Application. arXiv preprint, 2026.
+Swayam Amol Katole. An Empirical Comparison of Monolithic and Microservices Architectures for an E-Commerce Application. arXiv:2608.15668 [cs.SE], 2026.
 ```
 
-The arXiv URL will be added after the submission is publicly available.
+Paper: [https://arxiv.org/abs/2608.15668](https://arxiv.org/abs/2608.15668)
 
 ## License
 
